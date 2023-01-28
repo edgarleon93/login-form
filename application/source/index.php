@@ -1,3 +1,10 @@
+<?php
+// demarage session php
+session_start(); 
+
+// initialisation du connecteur mySQL
+$db = new PDO('mysql:host=database;dbname=mydb','form', 'password');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -9,12 +16,12 @@
     <title>Document</title>
 </head>
 <body>
-<!-- <div class="flex items-center justify-center h-screen" > -->
+<div class="flex items-center justify-center h-screen" >
 <?php
 
 switch ($_GET['page'] ?? '') {
     case 'login':
-        echo 'login';
+        require 'login.php';
         break;
 
     case 'register':
@@ -22,11 +29,11 @@ switch ($_GET['page'] ?? '') {
         break;
 
     default:
-        echo 'default';
+        print_r($_SESSION);
         break;
 }
 
 ?>
-<!-- </div> -->
+</div>
 </body>
 </html>

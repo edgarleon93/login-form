@@ -1,19 +1,24 @@
 <?php
 $errors = [];
 
+// conditions si formulaire a ete envoyé 
 if (!empty($_POST)) {
+
+    // validation firstname
     if (empty($_POST['firstname'])) {
         $errors['firstname'] = 'First name is required';
     } elseif (strlen($_POST['firstname']) >= 255) {
         $errors['firstname'] = 'First name should be less than 255 characters';
     }
 
+    // validation lastname
     if (empty($_POST['lastname'])) {
         $errors['lastname'] = 'Last name is required';
     } elseif (strlen($_POST['lastname']) >= 255) {
         $errors['lastname'] = 'Last name should be less than 255 characters';
     }
 
+    // validation email
     if (empty($_POST['email'])) {
         $errors['email'] = 'Email is required';
     } elseif (strlen($_POST['email']) >= 255) {
@@ -22,6 +27,7 @@ if (!empty($_POST)) {
         $errors['email'] = 'Email is not a valid email address';
     }
 
+    // validation password
     if (empty($_POST['password'])) {
         $errors['password'] = 'Password is required';
     } elseif (strlen($_POST['password']) >= 255) {
@@ -30,14 +36,47 @@ if (!empty($_POST)) {
         $errors['password'] = 'Password should be at least 8 characters';
     }
 
+    // validation password2
     if (empty($_POST['password2'])) {
         $errors['password2'] = 'Password verification is required';
     } elseif ($_POST['password'] !== $_POST['password2']) {
         $errors['password2'] = 'Password verification is not the same as password';
     }
 
+    // si pas d'erreurs mettre user en db
     if (empty($errors)) {
-        $db = new PDO('mysql:host=database;dbname=mydb','form', 'password');
+
+        // sanitize les string d'input 
+        $data = [
+            'firstname' => trim(htmlspecialchars($_POST['firstname'])),
+            'lastname' => trim(htmlspecialchars($_POST['lastname'])),
+            'email' => trim(filter_var($_POST['email'], FILTER_SANITIZE_EMAIL)),
+            'password' => md5($_POST['password']),
+        ];
+
+        // demander le nombre de user qui on cette email
+        $query = $db->prepare('SELECT COUNT(*) FROM users WHERE email = :email');
+        $query->bindValue(':email', $data['email']);
+        $query->execute();
+        
+        // store le resultat de la query
+        $userExists = $query->fetchColumn() !== 0;
+
+        // si le user n'existe pas, inserer en db
+        if (!$userExists) {
+            $query = $db->prepare('INSERT INTO users (firstname, lastname, email, password) VALUES (:firstname, :lastname, :email, :password)');
+            
+            foreach ($data as $param => $value) {
+                $query->bindValue(':' . $param, $value);
+            }
+
+            $query->execute();
+        }
+        
+        // si user existe, afficher une erreur
+        else {
+            $errors['email'] = 'Email is already used';
+        }     
     }
 }
 // echo '<pre>';
