@@ -27,9 +27,14 @@ switch ($_GET['page'] ?? '') {
     case 'register':
         require 'register.php';
         break;
+    
+    case 'logout':
+        session_destroy();
+        echo '<script>document.location.href = "/index.php";</script>';
+        exit; 
 
     default:
-        print_r($_SESSION);
+        require 'home.php';
         break;
 }
 
