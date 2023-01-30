@@ -77,108 +77,196 @@ if (!empty($_POST)) {
 
 ?>
 
-<div class="block p-6 rounded-sm bg-zinc-900 max-w-md w-3/5 border-gradient-to-br from-red-200 via-red-300 to-yellow-200">
+<div class="block p-6 rounded-sm bg-zinc-900 max-w-md w-4/5">
   <form method="post" action="index.php?page=register">
-      <div class="form-group mb-6 border-b">
-        <input type="text" name="firstname" class="form-control
-        w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-200
-        bg-transparent
-        border-none
-        border border-b border-amber-200
-        rounded-sm
-        transition
-        ease-in-out
-        m-0
-        "
-        placeholder="John">
-
-          <?=!empty($errors['firstname']) ? '<p class="text-red-300">' . $errors['firstname'] . '</p>' : ''; ?>
-
+      <div class="form-group mb-6">
+        <div class="relative z-0 w-full mb-6 group">
+            <input type="text" name="firstname" class="block 
+            py-2.5 
+            px-0 
+            w-full 
+            text-sm 
+            text-gray-900 
+            bg-transparent 
+            border-0 
+            border-b-2 
+            border-gray-300 
+            appearance-none 
+            dark:text-white 
+            dark:border-gray-600 
+            dark:focus:border-amber-200 
+            focus:outline-none 
+            focus:ring-0 
+            focus:border-blue-600 
+            peer" placeholder=" " required />
+            <label for="floating_email" class="peer-focus:font-medium
+             absolute 
+             text-sm 
+             text-gray-500 
+             dark:text-gray-400 
+             duration-300 
+             transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
+             peer-focus:left-0 
+             peer-focus:text-amber-200 
+             peer-focus:dark:text-amber-200 
+             peer-placeholder-shown:scale-100 
+             peer-placeholder-shown:translate-y-0 
+             peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Firstname</label>
+        </div>
+        <?=!empty($errors['firstname']) ? '<p class="text-red-300">' . $errors['firstname'] . '</p>' : ''; ?>
       </div>
-      <div class="form-group mb-6 border-b">
-        <input type="text" name="lastname" class="form-control
-        w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-200
-        bg-transparent
-        border-none
-        border border-b border-amber-200
-        rounded-sm
-        transition
-        ease-in-out
-        m-0  "
-        placeholder="Doe">
 
+      <div class="form-group mb-6">
+        <div class="relative z-0 w-full mb-6 group">
+            <input type="text" name="lastname" class="block 
+            py-2.5 
+            px-0 
+            w-full 
+            text-sm 
+            text-gray-900 
+            bg-transparent 
+            border-0 
+            border-b-2 
+            border-gray-300 
+            appearance-none 
+            dark:text-white 
+            dark:border-gray-600 
+            dark:focus:border-amber-200 
+            focus:outline-none 
+            focus:ring-0 
+            focus:border-blue-600 
+            peer" placeholder=" " required />
+            <label for="floating_email" class="peer-focus:font-medium
+             absolute 
+             text-sm 
+             text-gray-500 
+             dark:text-gray-400 
+             duration-300 
+             transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
+             peer-focus:left-0 
+             peer-focus:text-amber-200 
+             peer-focus:dark:text-amber-200 
+             peer-placeholder-shown:scale-100 
+             peer-placeholder-shown:translate-y-0 
+             peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Laststname</label>
+        </div>
           <?=!empty($errors['lastname']) ? '<p class="text-red-300">' . $errors['lastname'] . '</p>' : ''; ?>
-
       </div>
-    <div class="form-group mb-6 border-b">
-      <input type="email" name="email"  class="form-control block
-      w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-200
-        bg-transparent
-        border-none
-        border border-b border-amber-200
-        rounded-sm
-        transition
-        ease-in-out
-        m-0  " 
-        placeholder="johndoe@2023.com">
 
+    <div class="form-group mb-6">
+      <div class="relative z-0 w-full mb-6 group">
+            <input type="text" name="email" class="block 
+            py-2.5 
+            px-0 
+            w-full 
+            text-sm 
+            text-gray-900 
+            bg-transparent 
+            border-0 
+            border-b-2 
+            border-gray-300 
+            appearance-none 
+            dark:text-white 
+            dark:border-gray-600 
+            dark:focus:border-amber-200 
+            focus:outline-none 
+            focus:ring-0 
+            focus:border-blue-600 
+            peer" placeholder=" " required />
+            <label for="floating_email" class="peer-focus:font-medium
+             absolute 
+             text-sm 
+             text-gray-500 
+             dark:text-gray-400 
+             duration-300 
+             transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
+             peer-focus:left-0 
+             peer-focus:text-amber-200 
+             peer-focus:dark:text-amber-200 
+             peer-placeholder-shown:scale-100 
+             peer-placeholder-shown:translate-y-0 
+             peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Address email</label>
+        </div>
         <?=!empty($errors['email']) ? '<p class="text-red-300">' . $errors['email'] . '</p>' : ''; ?>
-
     </div>
-    <div class="form-group mb-6 border-b">
-      <input type="password" name="password" class="form-control block
-      w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-200
-        bg-transparent
-        border-none
-        border border-b border-amber-200
-        rounded-sm
-        transition
-        ease-in-out
-        m-0  " 
-        placeholder="8+ character">
 
+    <div class="form-group mb-6">
+      <div class="relative z-0 w-full mb-6 group">
+            <input type="password" name="password" class="block 
+            py-2.5 
+            px-0 
+            w-full 
+            text-sm 
+            text-gray-900 
+            bg-transparent 
+            border-0 
+            border-b-2 
+            border-gray-300 
+            appearance-none 
+            dark:text-white 
+            dark:border-gray-600 
+            dark:focus:border-amber-200 
+            focus:outline-none 
+            focus:ring-0 
+            focus:border-blue-600 
+            peer" placeholder=" " required />
+            <label for="floating_email" class="peer-focus:font-medium
+             absolute 
+             text-sm 
+             text-gray-500 
+             dark:text-gray-400 
+             duration-300 
+             transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
+             peer-focus:left-0 
+             peer-focus:text-amber-200 
+             peer-focus:dark:text-amber-200 
+             peer-placeholder-shown:scale-100 
+             peer-placeholder-shown:translate-y-0 
+             peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Password</label>
+        </div>
         <?=!empty($errors['password']) ? '<p class="text-red-300">' . $errors['password'] . '</p>' : ''; ?>
-
     </div>
-    <div class="form-group mb-6 border-b">
-      <input type="password" name="password2" class="form-control block
-      w-full
-        px-3
-        py-1.5
-        text-base
-        font-normal
-        text-gray-200
-        bg-transparent
-        border-none
-        border border-b border-amber-200
-        rounded-sm
-        transition
-        ease-in-out
-        m-0  " 
-        placeholder="Repeat 8+ character">
 
-        <?=!empty($errors['password2']) ? '<p class="text-red-300">' . $errors['password2'] . '</p>' : ''; ?>
-
+    <div class="form-group mb-6">
+      <div class="relative z-0 w-full mb-6 group">
+            <input type="password" name="password2" class="block 
+            py-2.5 
+            px-0 
+            w-full 
+            text-sm 
+            text-gray-900 
+            bg-transparent 
+            border-0 
+            border-b-2 
+            border-gray-300 
+            appearance-none 
+            dark:text-white 
+            dark:border-gray-600 
+            dark:focus:border-amber-200 
+            focus:outline-none 
+            focus:ring-0 
+            focus:border-blue-600 
+            peer" placeholder=" " required />
+            <label for="floating_email" class="peer-focus:font-medium
+             absolute 
+             text-sm 
+             text-gray-500 
+             dark:text-gray-400 
+             duration-300 
+             transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] 
+             peer-focus:left-0 
+             peer-focus:text-amber-200 
+             peer-focus:dark:text-amber-200 
+             peer-placeholder-shown:scale-100 
+             peer-placeholder-shown:translate-y-0 
+             peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Repeat Password</label>
+        </div>
+         <?=!empty($errors['password2']) ? '<p class="text-red-300">' . $errors['password2'] . '</p>' : ''; ?>
     </div>
    
     <button type="submit" class="

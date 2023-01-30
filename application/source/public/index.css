@@ -1,3 +1,6 @@
-* {
+body {
     background-color: aqua;
+}
+input:-internal-autofill-selected {
+    background-color: -internal-light-dark(rgba(232, 240, 254, 0)
 }

@@ -5,18 +5,20 @@ session_start();
 // initialisation du connecteur mySQL
 $db = new PDO('mysql:host=database;dbname=mydb','form', 'password');
 ?>
-
+<style><?php include './index.css'; ?></style>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="index.css">
+    <link href="./index.css" rel="stylesheet">
+     <script src="https://cdn.tailwindcss.com"></script>
     <title>Login form</title>
 </head>
 <body>
+
+
 <nav class="bg-white border-gray-200 px-2 sm:px-2 py-1 rounded-none dark:bg-zinc-900">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
   <div class="flex md:order-1">

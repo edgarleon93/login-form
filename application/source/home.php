@@ -3,7 +3,7 @@
 <?php
 if (!empty($_SESSION['user'])) {
 ?>
-    <div class="font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-red-300 to-amber-300"> Bienvenue <?=$_SESSION['user']['firstname']; ?></div>
+    <div class="font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-red-300 to-amber-300 text-center"> Bienvenue <?=$_SESSION['user']['firstname']; ?></div>
     <br>
     <button type="submit" onclick="document.location.href='/index.php?page=login'" class="
     w-full
