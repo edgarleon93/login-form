@@ -43,10 +43,9 @@ if (!empty($_POST)) {
         $errors['password2'] = 'Password verification is not the same as password';
     }
 
-    // si pas d'erreurs mettre user en db
+        // if there are no errors, insert the user into the database
     if (empty($errors)) {
-
-        // sanitize les string d'input 
+        // sanitize the input strings
         $data = [
             'firstname' => trim(htmlspecialchars($_POST['firstname'])),
             'lastname' => trim(htmlspecialchars($_POST['lastname'])),
@@ -54,34 +53,26 @@ if (!empty($_POST)) {
             'password' => md5($_POST['password']),
         ];
 
-        // demander le nombre de user qui on cette email
-        $query = $db->prepare('SELECT COUNT(*) FROM users WHERE email = :email');
-        $query->bindValue(':email', $data['email']);
-        $query->execute();
-        
-        // store le resultat de la query
-        // $userExists = $query->fetchColumn() !== 0;
+        // check if the email already exists
+        $emailExists = $db->prepare("SELECT COUNT(*) FROM users WHERE email = :email");
+        $emailExists->bindValue(":email", $data['email']);
+        $emailExists->execute();
 
-        echo '<pre>';
-        print_r($query->fetchColumn());
-        echo '</pre>';
-
-        // si le user n'existe pas, inserer en db
-        if (empty($query->fetchColumn)) {
+        if ($emailExists->fetchColumn() == 0) {
+            // if the email does not exist, insert the user
             $query = $db->prepare('INSERT INTO users (firstname, lastname, email, password) VALUES (:firstname, :lastname, :email, :password)');
-            
+
             foreach ($data as $param => $value) {
                 $query->bindValue(':' . $param, $value);
             }
 
             $query->execute();
-        }
-        
-        // si user existe, afficher une erreur
-        else {
+        } else {
+            // if the email exists, display an error
             $errors['email'] = 'Email is already used';
-        }     
+        }
     }
+
 }
 
 ?>
@@ -102,7 +93,8 @@ if (!empty($_POST)) {
         rounded-sm
         transition
         ease-in-out
-        m-0"
+        m-0
+        "
         placeholder="John">
 
           <?=!empty($errors['firstname']) ? '<p class="text-red-300">' . $errors['firstname'] . '</p>' : ''; ?>
@@ -163,7 +155,7 @@ if (!empty($_POST)) {
         transition
         ease-in-out
         m-0  " 
-        placeholder="8+ strong character">
+        placeholder="8+ character">
 
         <?=!empty($errors['password']) ? '<p class="text-red-300">' . $errors['password'] . '</p>' : ''; ?>
 
@@ -183,7 +175,7 @@ if (!empty($_POST)) {
         transition
         ease-in-out
         m-0  " 
-        placeholder="Repeat 8+ strong character">
+        placeholder="Repeat 8+ character">
 
         <?=!empty($errors['password2']) ? '<p class="text-red-300">' . $errors['password2'] . '</p>' : ''; ?>
 
