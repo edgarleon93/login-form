@@ -3,25 +3,26 @@
 <?php
 if (!empty($_SESSION['user'])) {
 ?>
-    <div class="font-extrabold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-red-300 to-amber-300 text-center"> Bienvenue <?=$_SESSION['user']['firstname']; ?></div>
+    <div class="text-center font-bold text-transparent text-3xl bg-clip-text text-white"> Bienvenue 
+    <span class="font-extrabold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-red-300 to-amber-300 text-center"> <?=$_SESSION['user']['firstname']; ?></span></div>
     <br>
     <button type="submit" onclick="document.location.href='/index.php?page=login'" class="
     w-full
     px-6
     py-2.5
     bg-zinc-800
-    text-amber-300	
+    text-amber-200	
     font-medium
     text-xs
     leading-tight
     uppercase
     rounded-sm
     shadow-md
-    hover:hover:bg-zinc-600 hover:shadow-lg 
+    hover:hover:bg-zinc-600 hover:shadow-lg hover:text-amber-300
     focus:hover:bg-zinc-600 focus:shadow-lg focus:outline-none focus:ring-0
     active:bg-blue-800 active:shadow-lg
     transition
-    duration-150
+    duration-300
     ease-in-out">Sign out</button>
 <?php
 } else {
@@ -44,7 +45,7 @@ if (!empty($_SESSION['user'])) {
     focus:bg-zinc-600 focus:shadow-lg focus:outline-none focus:ring-0
     active:bg-blue-800 active:shadow-lg
     transition
-    duration-150
+    duration-300
     ease-in-out">Sign in</button>
     <br><br>
     <button type="submit" onclick="document.location.href='/index.php?page=register'" class="
@@ -64,7 +65,7 @@ if (!empty($_SESSION['user'])) {
     focus:bg-zinc-600 focus:shadow-lg focus:outline-none focus:ring-0
     active:bg-blue-800 active:shadow-lg
     transition
-    duration-150
+    duration-300
     ease-in-out">Register</button>
 <?php
 }

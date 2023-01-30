@@ -35,11 +35,11 @@ $db = new PDO('mysql:host=database;dbname=mydb','form', 'password');
     rounded-sm
     shadow-md
     border border-amber-200
-    hover:bg-zinc-600 hover:shadow-lg
+    hover:bg-zinc-600 hover:shadow-lg hover:text-amber-300 hover:border-amber-300
     focus:bg-zinc-600 focus:shadow-lg focus:outline-none focus:ring-0
     active:bg-blue-800 active:shadow-lg
     transition
-    duration-150
+    duration-300
     ease-in-out">Login</button>
     </button>
   </div>
@@ -58,18 +58,18 @@ $db = new PDO('mysql:host=database;dbname=mydb','form', 'password');
     rounded-sm
     shadow-md
     border border-amber-200
-    hover:bg-zinc-600 hover:shadow-lg
+    hover:bg-zinc-600 hover:shadow-lg hover:text-amber-300 hover:border-amber-300
     focus:bg-zinc-600 focus:shadow-lg focus:outline-none focus:ring-0
     active:bg-blue-800 active:shadow-lg
     transition
-    duration-150
+    duration-300
     ease-in-out">Register</button>
     </button>
   </div>
 
 </nav>
     
-<div class="flex items-center justify-center h-screen bg-slate-800 " >
+<div class="flex items-center justify-center h-screen bg-gradient-to-r from-neutral-800 to-slate-800 " >
 <?php
 
 switch ($_GET['page'] ?? '') {

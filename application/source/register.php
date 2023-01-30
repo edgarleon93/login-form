@@ -76,8 +76,19 @@ if (!empty($_POST)) {
 }
 
 ?>
-
 <div class="block p-6 rounded-sm bg-zinc-900 max-w-md w-4/5">
+    <h1 class="
+    text-start 
+    text-3xl
+    text-white
+    font-bold
+    ">Welcome to LogForm</h1>
+    <p class="
+    text-slate-400
+    text-sm 
+
+    ">Creat your account</p>
+    <br>
   <form method="post" action="index.php?page=register">
       <div class="form-group mb-6">
         <div class="relative z-0 w-full mb-6 group">
@@ -281,28 +292,30 @@ if (!empty($_POST)) {
       uppercase
       rounded-sm
       shadow-md
-      hover:bg-zinc-600 hover:shadow-lg hover:amber-100
+      hover:bg-zinc-600 hover:shadow-lg hover:text-amber-300
       focus:bg-zinc-600 focus:shadow-lg focus:outline-none focus:ring-0
       active:bg-blue-800 active:shadow-lg
       transition
       duration-300
-      ease-in-out">Create an account</button>
+      ease-in-out">Create my account</button>
       <div class="form-group mt-6 text-gray-200">
   </form>
 
 
 </div>
 <button type="" onclick="document.location.href='/index.php?page=login'" class="
-    w-full
+
+    w-50
     py-2.5
     text-amber-200	
     text-xs
     leading-tight
     rounded-sm
-    hover:bg-zinc-800 hover:shadow-lg hover:amber-100
+    hover:text-amber-300
     focus:bg-zinc-800 focus:shadow-lg focus:outline-none focus:ring-0
     active:bg-blue-800 active:shadow-lg
     transition
     duration-300
+    text-start
     ease-in-out">Already registered?</button>
   </div> 

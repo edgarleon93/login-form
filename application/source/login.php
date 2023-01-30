@@ -53,6 +53,13 @@ if (!empty($_POST)) {
 ?>
 
 <div class="block p-6 rounded-sm shadow-lg bg-zinc-900 max-w-md w-4/5">
+<h1 class="
+    text-start 
+    text-3xl
+    text-white
+    font-bold
+    ">Happy to see you again</h1>
+    <br>
   <form method="post" action="index.php?page=login">
     <div class="form-group mb-6">
     <div class="relative z-0 w-full mb-6 group">
@@ -144,7 +151,7 @@ if (!empty($_POST)) {
       uppercase
       rounded-sm
       shadow-md
-      hover:bg-zinc-600 hover:shadow-lg hover:amber-100
+      hover:bg-zinc-600 hover:shadow-lg hover:text-amber-300
       focus:bg-zinc-600 focus:shadow-lg focus:outline-none focus:ring-0
       active:bg-blue-800 active:shadow-lg
       transition
@@ -155,13 +162,13 @@ if (!empty($_POST)) {
   </form>
   <div class="form-group mt-6 text-gray-200">
   <button type="" onclick="document.location.href='/index.php?page=register'" class="
-    w-full
+    w-50
     py-2.5
     text-amber-200	
     text-xs
     leading-tight
     rounded-sm
-    hover:bg-zinc-800 hover:shadow-lg hover:amber-100
+    hover:shadow-lg hover:text-amber-300
     focus:bg-zinc-800 focus:shadow-lg focus:outline-none focus:ring-0
     active:bg-blue-800 active:shadow-lg
     transition
