@@ -1,24 +1,24 @@
-<div class="block p-6 rounded-lg shadow-lg bg-white max-w-md w-3/5">
+<div class="block p-6 rounded-none shadow-lg bg-zinc-800 max-w-md w-3/5 jus">
 
 <?php
 if (!empty($_SESSION['user'])) {
 ?>
-    <div class="alert alert-success">Bienvenue <?=$_SESSION['user']['firstname']; ?></div>
+    <div class="alert alert-success text-white">Bienvenue <?=$_SESSION['user']['firstname']; ?></div>
     <br>
     <button type="submit" onclick="document.location.href='/index.php?page=logout'" class="
     w-full
     px-6
     py-2.5
-    bg-blue-600
-    text-white
+    bg-zinc-600
+    text-amber-300	
     font-medium
     text-xs
     leading-tight
     uppercase
-    rounded
+    rounded-none
     shadow-md
-    hover:bg-blue-700 hover:shadow-lg
-    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+    hover:hover:bg-zinc-400 hover:shadow-lg 
+    focus:hover:bg-zinc-400 focus:shadow-lg focus:outline-none focus:ring-0
     active:bg-blue-800 active:shadow-lg
     transition
     duration-150
@@ -26,22 +26,22 @@ if (!empty($_SESSION['user'])) {
 <?php
 } else {
 ?>
-    <div class="alert alert-danger">Vous n'êtes pas connecté</div>
+    <div class="alert alert-danger text-white justify-center">Vous n'êtes pas connecté</div>
     <br>
     <button type="submit" onclick="document.location.href='/index.php?page=login'" class="
     w-full
     px-6
     py-2.5
-    bg-blue-600
-    text-white
+    bg-zinc-600
+    text-amber-200	
     font-medium
     text-xs
     leading-tight
     uppercase
-    rounded
+    rounded-none
     shadow-md
-    hover:bg-blue-700 hover:shadow-lg
-    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+    hover:bg-zinc-400 hover:shadow-lg 
+    focus:bg-zinc-400 focus:shadow-lg focus:outline-none focus:ring-0
     active:bg-blue-800 active:shadow-lg
     transition
     duration-150
@@ -51,16 +51,16 @@ if (!empty($_SESSION['user'])) {
     w-full
     px-6
     py-2.5
-    bg-blue-600
-    text-white
+    bg-zinc-600
+    text-amber-200	
     font-medium
     text-xs
     leading-tight
     uppercase
-    rounded
+    rounded-none
     shadow-md
-    hover:bg-blue-700 hover:shadow-lg
-    focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0
+    hover:bg-zinc-400 hover:shadow-lg
+    focus:bg-zinc-400 focus:shadow-lg focus:outline-none focus:ring-0
     active:bg-blue-800 active:shadow-lg
     transition
     duration-150
